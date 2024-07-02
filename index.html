@@ -15,7 +15,8 @@
             margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
-            font-size: 40px; /* Increase this value for larger font size */
+            font-size: 45px; /* Increase this value for larger font size */
+            white-space: pre-wrap; /* Preserve whitespace and line breaks */
         }
     </style>
 </head>
@@ -39,7 +40,9 @@
         
         // Display the text in the div
         if (text) {
-            document.getElementById('displayText').innerText = text;
+            // Replace \n with <br> for line breaks
+            const formattedText = text.replace(/\n/g, '<br>');
+            document.getElementById('displayText').innerHTML = formattedText;
         }
     </script>
 </body>
